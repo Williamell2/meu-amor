@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    
+  <meta charset="UTF-8">
+  <title>Nosso Amor 💘</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #161c4f, #5e23b2);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 2em;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 0.5em;
+    }
+
+    #contador {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin: 1em 0;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5em 1em;
+      border-radius: 10px;
+    }
+
+    .foto {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      margin-top: 1em;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .mensagem {
+      font-size: 1.4em;
+      margin: 1.5em 0;
+    }
+
+    .btn {
+      background-color: #ff6f91;
+      color: white;
+      padding: 0.8em 1.5em;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      background-color: #ff4e7a;
+    }
+
+    audio {
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="will&bia.jpeg" alt="Nós dois" class="foto" />
+  <!-- Substitua "SUA_FOTO.jpg" pelo nome ou URL da sua foto -->
+   
+
+  <h1>💑 Estamos Juntos Há...</h1>
+  <div id="contador">Calculando...</div>
+
+  <p class="mensagem">Cada dia com você é o melhor da minha vida 💖</p>
+
+  <!-- Botão de compartilhar -->
+  <a class="btn" href="#" onclick="compartilhar()">Compartilhar no WhatsApp</a>
+  <br>
+
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5ZFqYsgI09PaUbH5vkrufz?utm_source=generator" width="300px" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+  <script>
+    // Defina a data do início do namoro
+    const dataNamoro = new Date('2025-06-14'); // Altere aqui
+
+    function atualizarContador() {
+      const hoje = new Date();
+      const diff = hoje - dataNamoro;
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById('contador').textContent = `${dias} dias`;
+    }
+
+    function compartilhar() {
+      const texto = `💖 Eu e meu amor estamos juntos há ${document.getElementById('contador').textContent}! Veja essa página linda que fiz pra ela 😍`;
+      const url = window.location.href;
+      const link = `https://wa.me/?text=${encodeURIComponent(texto)}%0A${encodeURIComponent(url)}`;
+      window.open(link, '_blank');
+    }
+
+    atualizarContador();
+  </script>
+</body>
+</html>
